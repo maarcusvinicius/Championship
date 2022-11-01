@@ -19,4 +19,4 @@ async function bootstrap() {
   await fastify.listen({ port:3333 })
 }
 
-bootstrap()rugeuuebgieubrguibreg;
+bootstrap()
