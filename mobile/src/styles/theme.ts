@@ -3,24 +3,24 @@ import { extendTheme } from 'native-base';
 export const THEME = extendTheme({
   colors: {
     gray: {
-      950: '#09090A',
-      900: '#121214',
-      800: '#202024',
-      600: '#323238',
-      300: '#8D8D99',
-      200: '#C4C4CC',
+      20: '#d0d0d0',
     },
     green: {
       500: '#047C3F'
     },
     blue: {
-      500: '#006bb6',
-      600: '#015d9e',
+      40: "#006bb6",
+      70: "#1e293b",
+      90: "#0f172a"
     },
     red: {
-      500: '#DB4437',
+      50: '#DB4437',
+      70: '#ed174c',
+      90: '#c3123e'
     },
-    white: '#FFFFFF'
+    white: {
+      10: '#fdfdff'
+    }
   },
   fonts: {
     heading: 'Roboto_700Bold',
