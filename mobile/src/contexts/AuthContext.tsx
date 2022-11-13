@@ -1,8 +1,10 @@
 import { createContext, ReactNode, useState, useEffect } from "react";
 
-import * as Google from  'expo-auth-session/providers/google'
+import * as Google from 'expo-auth-session/providers/google'
 import * as AuthSession from 'expo-auth-session';
 import * as WebBrowser from 'expo-web-browser';
+
+import { api } from '../services/api'
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -23,11 +25,11 @@ interface AuthProviderProps {
 
 export const AuthContext = createContext({} as AuthContextDataProps);
 
-export function AuthContextProvider({ children }: AuthProviderProps){
-  const [ user, setUser ] = useState<UserProps>({} as UserProps)
+export function AuthContextProvider({ children }: AuthProviderProps) {
+  const [user, setUser] = useState<UserProps>({} as UserProps)
   const [isUserLoading, setIsUserLoading] = useState(false)
 
-  const [ request, response, promptAsync ] = Google.useAuthRequest({
+  const [request, response, promptAsync] = Google.useAuthRequest({
     clientId: '843030325223-os8gcdte264v0d587k6vh71pk5t0allb.apps.googleusercontent.com',
     redirectUri: AuthSession.makeRedirectUri({ useProxy: true }),
     scopes: ['profile', 'email']
@@ -49,11 +51,29 @@ export function AuthContextProvider({ children }: AuthProviderProps){
   }
 
   async function signInWithGoogle(access_token: string) {
-    console.log("TOKEN DE AUTENTIFICAÇÃO ===>", access_token);
+    // console.log("TOKEN DE AUTENTIFICAÇÃO ===>", access_token);
+    try {
+      setIsUserLoading(true)
+
+      const tokenResponse = await api.post('/users', { access_token })
+      api.defaults.headers.common['Authorization'] = `Bearer ${tokenResponse.data.token}`
+
+      const userInfoResponse = await api.get('/me')
+      // console.log(userInfoResponse.data)
+      setUser(userInfoResponse.data.user)
+
+    } catch (error) {
+      console.log(error)
+      throw error
+
+    } finally {
+      setIsUserLoading(false)
+
+    }
   }
 
   useEffect(() => {
-    if(response?.type === 'success' && response.authentication?.accessToken) {
+    if (response?.type === 'success' && response.authentication?.accessToken) {
       signInWithGoogle(response.authentication.accessToken)
     }
   }, [response]);
@@ -65,7 +85,7 @@ export function AuthContextProvider({ children }: AuthProviderProps){
       user
     }}>
 
-    {children}
+      {children}
     </AuthContext.Provider>
   )
 }
