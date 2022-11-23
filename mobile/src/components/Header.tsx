@@ -8,7 +8,7 @@ interface Props {
   title: string;
   showBackButton?: boolean;
   showShareButton?: boolean;
-  onShare: () => void;
+  onShare?: () => void;
 }
 
 export function Header({ title, showBackButton = false, showShareButton = false, onShare }: Props) {

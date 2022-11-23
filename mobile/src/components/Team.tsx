@@ -1,5 +1,6 @@
 import { HStack } from 'native-base';
-import CountryFlag from "react-native-country-flag";
+import CountryFlag from 'react-native-country-flag';
+//imagens das bandeiras
 
 import { Input } from './Input';
 

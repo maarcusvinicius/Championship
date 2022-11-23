@@ -9,6 +9,7 @@ import { PoolCardProps } from "../components/PoolCard";
 import { EmptyMyPoolList } from "../components/EmptyMyPoolList";
 import { PoolHeader } from "../components/PoolHeader";
 import { Option } from "../components/Option";
+import { Guesses } from "../components/Guesses";
 
 import { api } from "../services/api";
 
@@ -17,8 +18,8 @@ interface RouteParams {
 }
 
 export function Details() {
-  const [optionSelected, setOptionSelected] = useState<'guesses' | 'ranking'>('guesses')
   const [isLoading, setIsLoading] = useState(true)
+  const [optionSelected, setOptionSelected] = useState<'guesses' | 'ranking'>('guesses')
   const [poolDetails, setPoolDetails] = useState<PoolCardProps>({} as PoolCardProps)
 
   const route = useRoute();
@@ -92,8 +93,11 @@ export function Details() {
 
             </HStack>
 
-          </VStack>
 
+            <Guesses poolId={poolDetails.id} code={poolDetails.code}/>
+
+          </VStack>
+          
           : <EmptyMyPoolList code={poolDetails.code} />
       }
 
