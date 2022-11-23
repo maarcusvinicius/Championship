@@ -4,7 +4,7 @@ import { useAuth } from '../hooks/useAuth';
 
 import Logo from '../assets/logo.svg';
 
-import { Button } from "../components/Button";
+import { ButtonGoogle } from "../components/ButtonGoogle";
 
 export function SignIn() {
   const { signIn, isUserLoading } = useAuth()
@@ -15,10 +15,8 @@ export function SignIn() {
 
       <Logo width={160} height={80} />
 
-      <Button
-        title='ENTRAR COM GOOGLE'
-        type="SECONDARY"
-        leftIcon={<Icon as={Fontisto} name="google" color="white.10" size="md" />}
+      <ButtonGoogle
+        leftIcon={<Icon as={Fontisto} name="google" color="white.10" size="2xl" />}
         mt={12}
         onPress={signIn}
         isLoading={isUserLoading}
