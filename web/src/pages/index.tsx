@@ -5,7 +5,7 @@ import { FormEvent, useState } from 'react';
 
 import logoImg from '../assets/nba-logo.svg';
 import checkIcon from '../assets/icon-check.svg';
-import appPreviewImg from '../assets/aplicacao-preview.png';
+import appPreviewImg from '../assets/bola-de-basquete-cartoon.png';
 
 type HomeProps = {
   poolCount: number;
