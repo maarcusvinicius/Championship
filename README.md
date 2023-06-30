@@ -39,21 +39,21 @@ The application consists of a simulation of a sports betting pool through a mobi
 
 ## 🎡 Functionalities
 
-- Creation and participation in sweepstakes: Users can create and participate in sports sweepstakes through the web version of the application.
+- Creation and participation in sweepstakes: Users can create and participate in sports sweepstakes through the web version of the application
 
-- Verification of results: Participants can check and follow the results of the sweepstakes through the mobile version of the application.
+- Verification of results: Participants can check and follow the results of the sweepstakes through the mobile version of the application
 
-- Authentication with Google login: The project uses authentication with Google login to ensure security and identification of users.
+- Authentication with Google login: The project uses authentication with Google login to ensure security and identification of users
 
-- Backend in Node.js: The backend of the project is developed using Node.js to provide the logic and data manipulation of the syndicate.
+- Backend in Node.js: The backend of the project is developed using Node.js to provide the logic and data manipulation of the syndicate
 
-- Focus on Clean Code and TypeScript: The project encourages the use of good coding practices and the use of TypeScript for more readable, scalable and maintainable code.
+- Focus on Clean Code and TypeScript: The project encourages the use of good coding practices and the use of TypeScript for more readable, scalable and maintainable code
 
-- Development with Next.js: The project uses Next.js to develop the web version, taking advantage of features such as server-side rendering (SSR) and static page generation (SSG).
+- Development with Next.js: The project uses Next.js to develop the web version, taking advantage of features such as server-side rendering (SSR) and static page generation (SSG)
 
-- Improvement in development with Node.js: The project seeks to improve development skills with Node.js, aiming benefits in future projects.
+- Improvement in development with Node.js: The project seeks to improve development skills with Node.js, aiming benefits in future projects
 
-- Accessible and easy to understand: The project is developed with a focus on accessibility and ease of understanding, providing a pleasant experience for users.
+- Accessible and easy to understand: The project is developed with a focus on accessibility and ease of understanding, providing a pleasant experience for users
 
 <br />
 
@@ -119,6 +119,17 @@ $ npm run start:mobile
 
 - Explore the different features and enjoy the Championship experience.
 
+<br />
+
+## License
+
+<p>
+
+This project is licensed under the [MIT License](https://opensource.org/license/mit/). Feel free to use, modify and distribute it as needed.
+
+</p>
+
+<br />
 <br />
 <br />
 <h4 align="center"> 
